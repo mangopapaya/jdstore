@@ -38,7 +38,7 @@ before_action :admin_required
 private
 
 def program_params
-  params.require(:program).permit(:title, :category, :description, :space, :price)
+  params.require(:program).permit(:title, :category, :description, :space, :price, :image)
 end
 
 end

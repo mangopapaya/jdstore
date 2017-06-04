@@ -7,10 +7,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Alpha Baby</a>
+      <div class="navbar-brand"><%= link_to("Alpha Baby", root_path) %></div>
     </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
       <ul class="nav navbar-nav navbar-right">
         <% if !current_user %>
           <li class="active"><%= link_to("Sign Up", new_user_registration_path) %></li>
