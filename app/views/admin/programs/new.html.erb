@@ -1,0 +1,28 @@
+<h3> New Program </h3>
+
+<%= simple_form_for [:admin,@program] do |f| %>
+
+  <div class="group">
+    <%= f.input :title %>
+  </div>
+
+  <div class="group">
+    <%= "Category" %>
+    <%= f.select :category, :Category => ["STEM Discovery", "Aesthetic Revolution", "Intelligence Exploration", "Academic Support"] %>
+  </div>
+  <br>
+
+  <div class="group">
+    <%= f.input :description %>
+  </div>
+
+  <div class="group">
+    <%= f.input :space %>
+  </div>
+
+  <div class="group">
+    <%= f.input :price %>
+  </div>
+
+  <%= f.button :submit, "Submit", data: { disable_with: "Submitting..." } %>
+<% end %>
