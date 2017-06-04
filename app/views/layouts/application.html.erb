@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>Alpha Baby</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,18 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+
+      <header>
+        <%= render "common/navbar" %>
+      </header>
+      <div class="container">
+        <%= yield %>
+      </div>
+      <footer>
+        <%= render "common/footer" %>
+      </footer>
+      
+    </div>
   </body>
 </html>
