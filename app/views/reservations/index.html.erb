@@ -14,6 +14,7 @@
           <th colspan="2">Program Information</th>
           <th> Price </th>
           <th> Slots </th>
+          <th> Option </th>
         </tr>
       </thead>
 
@@ -37,6 +38,11 @@
             </td>
             <td>
               <%= reserved_program.slot %>
+            </td>
+            <td width="80">
+              <%= link_to reserved_program_path(reserved_program.program_id), method: :delete do %>
+                <i class="fa fa-trash"></i>
+              <% end %>
             </td>
           </tr>
         <% end %>

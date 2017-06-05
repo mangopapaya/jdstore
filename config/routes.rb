@@ -20,4 +20,6 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :reserved_programs
+
 end

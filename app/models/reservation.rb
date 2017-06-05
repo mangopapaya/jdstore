@@ -5,7 +5,7 @@ class Reservation < ApplicationRecord
   def reserve_program(program)
     ci = reserved_programs.build
     ci.program = program
-    ci.space = 1
+    ci.slot = 1
     ci.save
   end
 
@@ -22,5 +22,5 @@ class Reservation < ApplicationRecord
   def clean!
     reserved_programs.destroy_all
   end
-  
+
 end

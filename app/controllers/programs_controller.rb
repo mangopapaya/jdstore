@@ -9,8 +9,12 @@ class ProgramsController < ApplicationController
 
   def reserve_program
     @program = Program.find(params[:id])
-    current_reservation.reserve_program(@program)
-    flash[:notice] = "Program Reserved!"
+    if !current_reservation.programs.include?(@program)
+      current_reservation.reserve_program(@program)
+      flash[:notice] = "#{@program.title} Program Reserved!"
+    else
+      flash[:warning] = "Program already reserved."
+    end
     redirect_to :back
   end
 
