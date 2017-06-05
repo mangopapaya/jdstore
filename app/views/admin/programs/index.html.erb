@@ -1,6 +1,51 @@
-<ul>
-  <% @programs.each do |program| %>
+<h2> Program List </h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("Add New Program", new_admin_program_path, class: "btn btn-primary btn-sm") %>
+</div>
 
-    <li> <%= link_to(program.title, admin_program_path(program)) %></li>
-  <% end %>
-</ul>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th width="50">#</th>
+      <th width="250"> Program Picture </th>
+      <th widht="20">Name</th>
+      <th width="220"> Category </th>
+      <th width="100">Price</th>
+      <th width="100">Slots</th>
+      <th width="150"> Options </th>
+    </th>
+  </thead>
+  <tbody>
+    <% @programs.each do |program| %>
+      <tr>
+        <td>
+          <%= program.id %>
+        </td>
+        <td>
+          <%= link_to program_path(program) do %>
+            <% if program.image.present? %>
+              <%= image_tag(program.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://plachold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+        </td>
+        <td>
+          <%= program.title %>
+        </td>
+        <td>
+          <%= program.category %>
+        </td>
+        <td>
+          <%= program.price %>
+        </td>
+        <td>
+          <%= program.space %>
+        </td>
+        <td>
+          <%= link_to("Edit", edit_admin_program_path(program)) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

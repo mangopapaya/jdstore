@@ -27,6 +27,9 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
+              <% if current_user.admin? %>
+                <li> <%= link_to("Admin Panel", admin_programs_path) %></li>
+              <% end %>
               <li><%= link_to(content_tag(:i, "Sign Out", class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>
             </ul>
            </li>
