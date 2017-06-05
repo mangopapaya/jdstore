@@ -37,7 +37,10 @@
               <%= reserved_program.program.price %>
             </td>
             <td>
-              <%= reserved_program.slot %>
+              <%= form_for reserved_program, url: reserved_program_path(reserved_program.program_id) do |f| %>
+                <%= f.select :slot, 1..reserved_program.program.space %>
+                <%= f.submit "Update", data: { disable_with:"Submitting..."} %>
+              <% end %>
             </td>
             <td width="80">
               <%= link_to reserved_program_path(reserved_program.program_id), method: :delete do %>

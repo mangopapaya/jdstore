@@ -1,5 +1,5 @@
 class ReservedProgramsController < ApplicationController
-  before_actioin :authenticate_user!
+  before_action :authenticate_user!
 
   def destroy
     @reservation = current_reservation
@@ -9,5 +9,18 @@ class ReservedProgramsController < ApplicationController
 
     flash[:warning] = "Successfully remove #{@program.title} from reservation"
     redirect_to :back
+  end
+
+  def update
+    @reservation = current_reservation
+    @reserved_program = @reservation.reserved_programs.find_by(program_id: params[:id])
+    @reserved_program.update (reserved_program_params)
+    redirect_to reservations_path
+  end
+
+  private
+
+  def reserved_program_params
+    params.require(:reserved_program).permit(:slot)
   end
 end
