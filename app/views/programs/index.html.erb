@@ -1,0 +1,14 @@
+<div class="row">
+  <% @programs.each do |program| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to program_path(program) do %>
+        <% if program.image.present? %>
+          <%= image_tag(program.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placeholder.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+       <% end %>
+      <%= program.title %> $ <%= program.price %>
+    </div>
+  <% end %>
+</div>

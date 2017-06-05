@@ -21,6 +21,10 @@ before_action :admin_required
     end
   end
 
+  def show
+    @program = Program.find(params[:id])
+  end
+
   def edit
     @program = Program.find(params[:id])
   end
@@ -28,7 +32,7 @@ before_action :admin_required
   def update
     @program = Program.find(params[:id])
     if @program.update(program_params)
-      redirect_to admin_programs_path
+      redirect_to admin_program_path(@program)
     else
       render :edit
     end
