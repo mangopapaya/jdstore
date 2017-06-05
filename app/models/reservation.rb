@@ -8,4 +8,19 @@ class Reservation < ApplicationRecord
     ci.space = 1
     ci.save
   end
+
+  def total_price
+    sum = 0
+    reserved_programs.each do |reserved_program|
+      if reserved_program.program.price.present?
+        sum += reserved_program.slot * reserved_program.program.price
+      end
+    end
+    sum
+  end
+
+  def clean!
+    reserved_programs.destroy_all
+  end
+  
 end

@@ -1,6 +1,11 @@
 <div class="row">
   <div class="col-md-12">
 
+    <%= link_to("Clear all reservations", clean_reservations_path,
+                method: :delete, class: "pull-right",
+                style: "text-decoration: underline;",
+                data: { confirm: "Are you sure to clear all reservations?"}) %>
+
     <h2> My Reservations </h2>
 
     <table class="table table-bordered">
@@ -42,7 +47,7 @@
 
     <div class="total clearfix">
       <span class="pull-right">
-        <span> Total Amount xxx RMB </span>
+        <span> Total <%= render_reservation_total_price(current_reservation) %> RMB </span>
       </span>
     </div>
 
