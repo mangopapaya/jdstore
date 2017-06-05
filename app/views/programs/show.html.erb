@@ -18,7 +18,11 @@
     <div> Slot: <%= @program.space %></div>
     <div class="program-price"> $ <%= @program.price %></div>
     <div class="pull-right">
-      <%= link_to("Reserve Program", reserve_program_program_path(@program), :method => :post, :class => "btn btn-primary btn-danger btn-lg") %>
+      <% if @program.space > 0 %>
+        <%= link_to("Reserve Program", reserve_program_program_path(@program), :method => :post, :class => "btn btn-primary btn-danger btn-lg") %>
+      <% else %>
+        All slots have been reserved. Come earlier next time!
+      <% end %>
     </div>
   </div>
 </div>
