@@ -9,8 +9,9 @@ class ProgramsController < ApplicationController
 
   def reserve_program
     @program = Program.find(params[:id])
+    current_reservation.reserve_program(@program)
+    flash[:notice] = "Program Reserved!"
     redirect_to :back
-    flash[:notice] = "Program Reserved"
   end
-  
+
 end

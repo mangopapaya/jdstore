@@ -17,6 +17,12 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to reservations_path do %>
+              Reservation <i class="fa fa-calendar-plus-o"></i>(<%= current_reservation.programs.count %>)
+          <% end %>
+        </li>
+
         <% if !current_user %>
           <li class="active"><%= link_to("Sign Up", new_user_registration_path) %></li>
           <li><%= link_to(content_tag(:i, "Sign In", class: 'fa fa-sign-in'), new_user_session_path) %></li>

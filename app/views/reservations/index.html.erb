@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h2> My Reservations </h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Program Information</th>
+          <th> Price </th>
+          <th> Slots </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% current_reservation.reserved_programs.each do |reserved_program| %>
+          <tr>
+            <td width="400">
+              <%= link_to program_path(reserved_program.program) do %>
+                <% if reserved_program.program.image.present? %>
+                  <%= image_tag(reserved_program.program.image.thumb.url, class: "thumbnail") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                <% end %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to(reserved_program.program.title, program_path(reserved_program.program)) %>
+            </td>
+            <td>
+              <%= reserved_program.program.price %>
+            </td>
+            <td>
+              <%= reserved_program.slot %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+        <span> Total Amount xxx RMB </span>
+      </span>
+    </div>
+
+    <hr>
+
+    <div class="checkout clearfix">
+      <%= link_to("Proceed to Payment", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+    </div>
+  </div>
+</div>
