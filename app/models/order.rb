@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :user
+  has_many :program_lists
 
   validates :participant_name, presence: true
   validates :participant_age, presernce: true
