@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :reservations do
     collection do
       delete :clean
+        post :checkout
     end
   end
 
