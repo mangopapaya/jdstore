@@ -4,4 +4,8 @@ class ReservationsController < ApplicationController
     flash[:warning] = "All reservations cleared"
     redirect_to reservations_path
   end
+
+  def checkout
+    @order = Order.new
+  end
 end

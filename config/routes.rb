@@ -23,4 +23,6 @@ Rails.application.routes.draw do
 
   resources :reserved_programs
 
+  resources :orders
+
 end

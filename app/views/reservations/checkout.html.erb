@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h2> Reservation Details </h2>
+
+    <table class="table" width="500">
+      <thead>
+        <tr>
+          <th colspan="2"> Program Details </th>
+          <th>Price</th>
+          <th>Slot</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% current_reservation.reserved_programs.each do |reserved_program| %>
+          <tr>
+            <td width="250">
+              <% if reserved_program.program.image.present? %>
+                <%= image_tag(reserved_program.program.image.thumb.url, class: "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <td><font size=4px><b>
+              <%= reserved_program.program.title %>
+            </b></font>
+            <br>
+              <%= reserved_program.program.category %>
+            </td>
+            <td>
+              <%= reserved_program.program.price %>
+            </td>
+            <td>
+              <%= reserved_program.slot %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+        Total Amount <%= render_reservation_total_price(current_reservation) %> CNY
+      </span>
+    </div>
+
+    <hr>
+
+    <div class="order-form">
+
+      <%= simple_form_for @order do |f| %>
+
+      <legend> Participant Information </legend>
+      <div class="form-group col-lg-6">
+        <%= f.input :participant_name %>
+      </div>
+      <div class="form-group col-lg-6">
+        <%= f.input :participant_age %>
+      </div>
+
+      <legend> Contact Information </legend>
+      <div class="form-group col-lg-6">
+        <%= f.input :contact_name %>
+      </div>
+      <div class="form-group col-lg-6">
+        <%= f.input :contact_number %>
+      </div>
+
+      <div class="checkout">
+        <%= f.submit "Proceed to Payment", class: "btn btn-lg btn-danger pull-right",
+                      data: { disable_with: "Submitting..."} %>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
