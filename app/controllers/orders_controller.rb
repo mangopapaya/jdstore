@@ -7,10 +7,25 @@ class OrdersController < ApplicationController
     @order.total = current_reservation.total_price
 
     if @order.save
-      redirect_to order_path(@order)
+      current_reservation.reserved_programs.each do |reserved_program|
+        program_list = ProgramList.new
+        program_list.order = @order
+        program_list.program_image = reserved_program.program.image
+        program_list.program_name = reserved_program.program.title
+        program_list.program_category = reserved_program.program.category
+        program_list.program_price = reserved_program.program.price
+        program_list.slot = reserved_program.slot
+        program_list.save
+    end
+      redirect_to order_path(@order.token)
     else
       render 'reservations/checkout'
     end
+  end
+
+  def show
+    @order = Order.find_by_token(params[:id])
+    @program_lists = @order.program_lists
   end
 
   private

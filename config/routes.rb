@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     resources :programs
   end
 
+  namespace :account do
+    resources :orders
+  end
+
   resources :programs do
     member do
       post :reserve_program
