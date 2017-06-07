@@ -10,7 +10,6 @@ class OrdersController < ApplicationController
       current_reservation.reserved_programs.each do |reserved_program|
         program_list = ProgramList.new
         program_list.order = @order
-        program_list.program_image = reserved_program.program.image
         program_list.program_name = reserved_program.program.title
         program_list.program_category = reserved_program.program.category
         program_list.program_price = reserved_program.program.price
@@ -26,6 +25,20 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find_by_token(params[:id])
     @program_lists = @order.program_lists
+  end
+
+  def pay_with_alipay
+    @order = Order.find_by_token(params[:id])
+    @order.set_payment_with!("alipay")
+    @order.pay!
+    redirect_to order_path(@order.token), notice: "Successfully paid by Alipay"
+  end
+
+  def pay_with_wechat
+    @order = Order.find_by_token(params[:id])
+    @order.set_payment_with!("wechat")
+    @order.pay!
+    redirect_to order_path(@order.token), notice: "Successfully paid by Wechat Pay"
   end
 
   private
