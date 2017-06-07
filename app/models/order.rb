@@ -19,4 +19,31 @@ class Order < ApplicationRecord
   def pay!
     self.update_columns(is_paid: true)
   end
+
+  include AASM
+
+  aasm do
+    state :order_placed
+    state :paid
+    state :upcoming
+    state :completed
+    state :reservation_cancelled
+
+    event :make_payment, after_commit: :pay! do
+      transitions from: :order_placed, to: :paid
+    end
+
+    event :charge_order do
+      transitions from: :paid, to: :upcoming
+    end
+
+    event :deliver do
+      transitions from: :upcoming, to: :completed
+    end
+
+    event :cancel_reservation do
+      transitions from: [:order_placed, :paid], to: :reservation_cancelled
+    end
+  end
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607084459) do
+ActiveRecord::Schema.define(version: 20170607091835) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "total",            default: 0
@@ -19,11 +19,13 @@ ActiveRecord::Schema.define(version: 20170607084459) do
     t.integer  "participant_age"
     t.string   "contact_name"
     t.string   "contact_number"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.string   "token"
     t.boolean  "is_paid",          default: false
     t.string   "payment_method"
+    t.string   "aasm_state",       default: "order_placed"
+    t.index ["aasm_state"], name: "index_orders_on_aasm_state"
   end
 
   create_table "program_lists", force: :cascade do |t|
