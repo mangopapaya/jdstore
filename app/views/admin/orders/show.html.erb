@@ -12,7 +12,10 @@
         </tr>
       <tbody>
         <tr>
-          <th> <%= render_order_status(@order) %></th>
+          <th>
+            <%= render_order_status(@order) %>
+            <%= render "admin/orders/state_option", order: @order %>
+          </th>
           <td>
             <b><%= @order.participant_name %></b><br>
             Age of <%= @order.participant_age %>

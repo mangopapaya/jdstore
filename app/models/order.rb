@@ -28,6 +28,8 @@ class Order < ApplicationRecord
     state :upcoming
     state :completed
     state :reservation_cancelled
+    state :order_refunded
+    state :order_charged
 
     event :make_payment, after_commit: :pay! do
       transitions from: :order_placed, to: :paid
@@ -42,8 +44,13 @@ class Order < ApplicationRecord
     end
 
     event :cancel_reservation do
-      transitions from: [:order_placed, :paid], to: :reservation_cancelled
+      transitions from: [:order_placed], to: :reservation_cancelled
     end
+
+    event :refund_order do
+      transitions from: [:order_placed, :paid], to: :order_refunded
+    end
+
   end
 
 end

@@ -13,4 +13,28 @@ class Admin::OrdersController < ApplicationController
     @program_lists = @order.program_lists
   end
 
+  def cancel
+    @order = Order.find(params[:id])
+    @order.cancel_reservation!
+    redirect_to :back
+  end
+
+  def charge
+    @order = Order.find(params[:id])
+    @order.charge_order!
+    redirect_to :back
+  end
+
+  def deliver
+    @order = Order.find(params[:id])
+    @order.deliver!
+    redirect_to :back
+  end
+
+  def refund
+    @order = Order.find(params[:id])
+    @order.refund_order!
+    redirect_to :back
+  end
+
 end

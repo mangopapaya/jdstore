@@ -1,0 +1,25 @@
+<div style="padding:10px;">
+
+  <% case order.aasm_state %>
+  <% when "order_placed" %>
+    <%= link_to("Cancel Reservation", cancel_admin_order_path(order), class: "btn btn-default btn-sm", method: :post) %>
+  <% when "paid" %>
+    <%= link_to("Cancel Reservation", cancel_admin_order_path(order), class: "btn btn-default btn-sm", method: :post) %>
+    <%= link_to("Refund Order", refund_admin_order_path(order), class: "btn btn-default btn-sm", method: :post) %>
+    <%= link_to("Charge Order", charge_admin_order_path(order), class: "btn btn-default btn-sm", method: :post) %>
+  <% when "upcoming" %>
+    <%= link_to("Deliver Order", deliver_admin_order_path(order), class: "btn btn-default btn-sm", method: :post) %>
+
+  <% when "reservation_cancelled" %>
+    <span class="label label-default"> Reservation Cancelled</span>
+
+  <% when "order_refunded" %>
+    <span class="label label-default"> Order Refunded </span>
+
+  <% when "order_charged" %>
+    <span class="label label-default"> Order Charged </span>
+  <% end %>
+
+
+
+</div>
