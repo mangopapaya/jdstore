@@ -1,1 +1,381 @@
-<h1> Hello World </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<!-- Carousel Slides -->
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <%= image_tag("slide_1", :style => "width:100%") %>
+        <div class="carousel-caption">
+          <h3>Los Angeles</h3>
+          <p>LA is always so much fun!</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <%= image_tag("slide_2", :style => "width:100%") %>
+        <div class="carousel-caption">
+          <h3>Chicago</h3>
+          <p>Thank you, Chicago!</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <%= image_tag("slide_3", :style => "width:100%") %>
+        <div class="carousel-caption">
+          <h3>New York</h3>
+          <p>We love the Big Apple!</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
+
+<!-- /.carousel -->
+
+<!-- Section About
+================================================== -->
+<section id="about">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1 text-center">
+			<h2 class="section-heading">WHAT WE STAND FOR<br/>& OUR <b>PRINCIPLES</b></h2>
+			<hr>
+			<p>
+				 Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculusmus. Nulla dui. Fusce feugiat. Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus.
+			</p>
+			<p>
+				 Fusce feugiat Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculusmus. Nulla dui. Fusce feugiat. Fusce feugiat Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculusmus. Nulla dui. Fusce feugiat.
+			</p>
+			<p>
+				 Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculusmus. Nulla dui. Fusce feugiat. Fusce feugiat Praesent vestibulum aenean nonummy hendrerit mauris.
+			</p>
+	</div>
+</div>
+</div>
+</section>
+
+<!-- Section Program Categories
+================================================== -->
+<section id="portfolio">
+  <div class="container">
+  	<div class="col-lg-12 text-center">
+  		<h2 class="section-heading"><b>Alpha Programs</b></h2>
+  		<hr class="primary">
+  	</div>
+  </div>
+  <div class="container-fluid">
+    <div class="row no-gutter">
+    	<div class="col-lg-3 col-sm-6">
+    		<a href="/programs/categories" class="portfolio-box">
+    		<%= image_tag "STEM", :class=> "img-responsive"%>
+    		<div class="portfolio-box-caption">
+    			<div class="portfolio-box-caption-content">
+    				<div class="project-category text-faded">
+
+    				</div>
+    				<div class="project-name">
+    					 STEM Discovery
+    				</div>
+    			</div>
+    		</div>
+    		</a>
+    	</div>
+    	<div class="col-lg-3 col-sm-6">
+    		<a href="#" class="portfolio-box">
+    		<%= image_tag "aesthetic", :class => "img-responsive" %>
+    		<div class="portfolio-box-caption">
+    			<div class="portfolio-box-caption-content">
+    				<div class="project-category text-faded">
+
+    				</div>
+    				<div class="project-name">
+    					 Aesthetic Revolution
+    				</div>
+    			</div>
+    		</div>
+    		</a>
+    	</div>
+    	<div class="col-lg-3 col-sm-6">
+    		<a href="#" class="portfolio-box">
+    		<%= image_tag "intelligence", :class => "img-responsive" %>
+    		<div class="portfolio-box-caption">
+    			<div class="portfolio-box-caption-content">
+    				<div class="project-category text-faded">
+
+    				</div>
+    				<div class="project-name">
+    					 Intelligence Exploration
+    				</div>
+    			</div>
+    		</div>
+    		</a>
+    	</div>
+    	<div class="col-lg-3 col-sm-6">
+    		<a href="#" class="portfolio-box">
+    		<%= image_tag "academic", :class => "img-responsive" %>
+    		<div class="portfolio-box-caption">
+    			<div class="portfolio-box-caption-content">
+    				<div class="project-category text-faded">
+
+    				</div>
+    				<div class="project-name">
+    					 Academic Support
+    				</div>
+    			</div>
+    		</div>
+    		</a>
+    	</div>
+
+  	</div>
+  </div>
+</section>
+
+
+<!-- Section Testimonials
+================================================== -->
+<section id="testimonials">
+<div class="container">
+  <div class="row">
+  	<div class="col-md-12" data-wow-delay="0.2s">
+  		<div class="carousel slide" data-ride="carousel" id="quote-carousel">
+  			<!-- Bottom Carousel Indicators -->
+  			<ol class="carousel-indicators">
+  				<li data-target="#quote-carousel" data-slide-to="0" class="active"><img class="img-responsive " src="img/demo/testimonial1.jpg" alt="">
+  				</li>
+  				<li data-target="#quote-carousel" data-slide-to="1"><img class="img-responsive" src="http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/11/2015/11/23042525/1-150x150.png" alt="">
+  				</li>
+  			</ol>
+  			<!-- Carousel Slides / Quotes -->
+  			<div class="carousel-inner text-center">
+  				<!-- Quote 1 -->
+  				<div class="item active">
+  					<blockquote>
+  						<div class="row">
+  							<div class="col-sm-8 col-sm-offset-2">
+  								<p>
+  									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore!
+  								</p>
+  								<small>William W. Purkey</small>
+  							</div>
+  						</div>
+  					</blockquote>
+  				</div>
+  				<!-- Quote 2 -->
+  				<div class="item">
+  					<blockquote>
+  						<div class="row">
+  							<div class="col-sm-8 col-sm-offset-2">
+  								<p>
+  									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
+  								</p>
+  								<small>Johnny Doe</small>
+  							</div>
+  						</div>
+  					</blockquote>
+  				</div>
+  				<!-- End Quote 2 -->
+  			</div>
+  			<!-- Carousel Buttons Next/Prev -->
+  			<a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+  			<a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+  		</div>
+  	</div>
+  </div>
+  </div>
+</section>
+
+<!-- Section Fun Facts
+================================================== -->
+<section id="funfacts" class="parallax parallax-image">
+<div class="wrapsection">
+  <div class="container">
+  	<div class="parallax-content">
+  		<div class="row">
+  			<div class="col-md-3">
+  				<div class="funfacts text-center">
+  					<div class="icon">
+  						<i class="fa fa-table"></i>
+  					</div>
+  					<h2 class="counter" data-from="0" data-to="294" data-speed="2500"></h2>
+  					<h2>80+<br><br>
+            Program Variety</h2>
+  				</div>
+  			</div>
+  			<div class="col-md-3">
+  				<div class="funfacts text-center">
+  					<div class="icon">
+  						<i class="fa fa-trophy"></i>
+  					</div>
+  					<h2 class="counter" data-from="0" data-to="163" data-speed="2500"></h2>
+  					<h2>50+ <br><br>
+            Experienced Instructors</h2>
+  				</div>
+  			</div>
+  			<div class="col-md-3">
+  				<div class="funfacts text-center">
+  					<div class="icon">
+  						<i class="fa fa-group"></i>
+  					</div>
+  					<h2 class="counter" data-from="0" data-to="317" data-speed="2500"></h2>
+  					<h2> 1000+ <br><br>
+            Alpha Community</h2>
+  				</div>
+  			</div>
+  			<div class="col-md-3">
+  				<div class="funfacts text-center">
+  					<div class="icon">
+  						<i class="fa fa-location-arrow"></i>
+  					</div>
+  					<h2 class="counter" data-from="0" data-to="458" data-speed="2500"></h2>
+  					<h2> 5+ <br><br>
+            Destination Expansion </h2>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+</div>
+</section>
+<div class="clearfix">
+</div>
+
+
+<!-- Section Team
+================================================== -->
+<section id="teambio" class="no-padding">
+  <div class="container">
+    <div class="col-lg-12 text-center">
+      <h2 class="section-heading"><b>Alpha Team</b></h2>
+      <hr class="primary">
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="col-md-4 bg-dark no-padding teambox">
+    <div class="team-thumb overlay-image view-overlay">
+  	<img src="https://s3-eu-west-1.amazonaws.com/layanademo/guess-attic-837156_640.jpg" alt="" class="img-responsive">
+    	<div class="mask team_quote">
+    		<div class="port-zoom-link">
+    			<p>
+    				 Its is great to work in such company, some other projects will be started in the same format!
+    			</p>
+    		</div>
+    	</div>
+    </div>
+    <h2>BEVERLY GARCIA</h2>
+      <p>
+  	 VOLUNTEER WORK
+      </p>
+    <div class="team-social">
+    	<a href="#"><i class="fa fa-twitter"></i></a>
+    	<a href="#"><i class="fa fa-linkedin"></i></a>
+    	<a href="#"><i class="fa fa-facebook"></i></a>
+    	<a href="#"><i class="fa fa-google-plus"></i></a>
+    	<a href="#"><i class="fa fa-skype"></i></a>
+    </div>
+  </div>
+  <div class="col-md-4 bg-dark no-padding teambox">
+    <div class="team-thumb overlay-image view-overlay">
+    	<img src="https://s3-eu-west-1.amazonaws.com/layanademo/beauty-355157_640.jpg" alt="" class="img-responsive">
+    	<div class="mask team_quote">
+    		<div class="port-zoom-link">
+    			<p>
+    				 Its is great to work in such company, some other projects will be started in the same format!
+    			</p>
+    		</div>
+    	</div>
+    </div>
+    <h2>MARY LACOSTE</h2>
+    <p>
+    	 LAYANA FOUNDER
+    </p>
+    <div class="team-social">
+    	<a href="#"><i class="fa fa-twitter"></i></a>
+    	<a href="#"><i class="fa fa-linkedin"></i></a>
+    	<a href="#"><i class="fa fa-facebook"></i></a>
+    	<a href="#"><i class="fa fa-google-plus"></i></a>
+    	<a href="#"><i class="fa fa-skype"></i></a>
+    </div>
+  </div>
+  <div class="col-md-4 bg-primary no-padding teambox">
+    <div class="team-thumb overlay-image view-overlay">
+    	<img src="https://s3-eu-west-1.amazonaws.com/layanademo/woman-983967_640.jpg" alt="" class="img-responsive">
+    	<div class="mask team_quote">
+    		<div class="port-zoom-link">
+    			<p>
+    				 Its is great to work in such company, some other projects will be started in the same format!
+    			</p>
+    		</div>
+    	</div>
+    </div>
+    <h2>CAROL STEPHENS</h2>
+    <p>
+  	 PUBLIC RELATIONS
+    </p>
+    <div class="team-social">
+    	<a href="#"><i class="fa fa-twitter"></i></a>
+    	<a href="#"><i class="fa fa-linkedin"></i></a>
+    	<a href="#"><i class="fa fa-facebook"></i></a>
+    	<a href="#"><i class="fa fa-google-plus"></i></a>
+    	<a href="#"><i class="fa fa-skype"></i></a>
+    </div>
+  </div>
+</section>
+<div class="clearfix">
+</div>
+
+
+<!-- Footer
+================================================== -->
+<footer>
+  <%= render "common/footer" %>
+</footer>
+
+
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/countto.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/common.js"></script>
+</body>
+</html>

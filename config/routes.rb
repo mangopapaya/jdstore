@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     member do
       post :reserve_program
     end
+
   end
 
   resources :reservations do
@@ -39,6 +40,7 @@ Rails.application.routes.draw do
       member do
         post :pay_with_alipay
         post :pay_with_wechat
+        post :apply_to_cancel
       end
   end
 

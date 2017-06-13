@@ -1,21 +1,22 @@
 <div class="row">
   <div class="col-md-12">
 
-    <h2> Reservation Details </h2>
+    <h3> Reservation Details
+      <div class="pull-right"><%= render "admin/orders/state_option", order: @order %></div>
+    </h3>
 
+    <h5> <b>Reservation Status:</b> <%= render_order_status(@order) %></h5>
+
+    <br>
+    
     <table class="table">
       <thead>
         <tr>
-          <th> Reservation Status </th>
           <th> Participant Information </th>
           <th> Contact Information </th>
         </tr>
       <tbody>
         <tr>
-          <th>
-            <%= render_order_status(@order) %>
-            <%= render "admin/orders/state_option", order: @order %>
-          </th>
           <td>
             <b><%= @order.participant_name %></b><br>
             Age of <%= @order.participant_age %>

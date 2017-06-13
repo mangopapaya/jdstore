@@ -4,7 +4,7 @@ class ProgramsController < ApplicationController
   end
 
   def show
-    @program = Program.find(params[:id])
+      @program = Program.find(params[:id])
   end
 
   def reserve_program

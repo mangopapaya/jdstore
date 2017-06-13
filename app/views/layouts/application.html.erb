@@ -9,19 +9,19 @@
   </head>
 
   <body>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <div class="container-fluid">
+      <div class="row">
 
       <header>
         <%= render "common/navbar" %>
         <%= render "common/flashes" %>
       </header>
-      <div class="container">
         <%= yield %>
-      </div>
-      <footer>
-        <%= render "common/footer" %>
-      </footer>
 
-    </div>
+
+     </div>
+   </div>
+
   </body>
 </html>
