@@ -15,7 +15,7 @@ before_action :admin_required
 
   def create
     @program = Program.new(program_params)
-    @program.pcategory_id = params [:pcategory_id]
+     @program.pcategory_id = params[:pcategory_id]
     if @program.save
       redirect_to admin_programs_path
     else
@@ -24,16 +24,16 @@ before_action :admin_required
   end
 
   def show
-    @program = Program.find(params[:id])
+    @program = Program.friendly.find(params[:id])
   end
 
   def edit
-    @program = Program.find(params[:id])
+    @program = Program.friendly.find(params[:id])
       @pcategories = Pcategory.all.map { |p| [p.name, p.id]}
   end
 
   def update
-    @program = Program.find(params[:id])
+    @program = Program.friendly.find(params[:id])
       @program.pcategory_id = params[:pcategory_id]
     if @program.update(program_params)
       redirect_to admin_program_path
@@ -43,7 +43,7 @@ before_action :admin_required
   end
 
   def destroy
-    @program = Program.find(params[:id])
+    @program = Program.friendly.find(params[:id])
     @program.destroy
     redirect_to admin_programs_path, alert:'Program deleted'
   end

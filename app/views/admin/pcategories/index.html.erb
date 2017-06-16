@@ -9,6 +9,7 @@
     <tr>
       <th width='100px'>Name</th>
       <th width='200px'>Description</th>
+      <th width='100px'>Program Counts</th>
       <th width='100px'>Options</th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
     <tr>
       <td><%= link_to(pcategory.name, admin_pcategory_path(pcategory))  %></td>
       <td><%= pcategory.description %></td>
+      <td><%= pcategory.programs.count %></td>
       <td>
         <%= link_to 'Edit',edit_admin_pcategory_path(pcategory)%> |
         <%= link_to 'Delete',admin_pcategory_path(pcategory), method: :delete, data: {confirm: 'Are you sure to remove this category?'}%>

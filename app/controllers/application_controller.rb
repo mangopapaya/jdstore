@@ -26,4 +26,5 @@ class ApplicationController < ActionController::Base
     session["reservation_id"] = reservation.id
     return reservation
   end
+
 end

@@ -24,16 +24,16 @@ class Admin::PcategoriesController < ApplicationController
 
   def show
     # if (params[:id].present?)
-    @pcategory = Pcategory.find(params[:id])
+    @pcategory = Pcategory.friendly.find(params[:id])
     # end
   end
 
   def edit
-    @pcategory = Pcategory.find(params[:id])
+    @pcategory = Pcategory.friendly.find(params[:id])
   end
 
   def update
-    @pcategory = Pcategory.find(params[:id])
+    @pcategory = Pcategory.friendly.find(params[:id])
     if @pcategory.update(pcategory_params)
       redirect_to admin_pcategories_path
     else
@@ -42,7 +42,7 @@ class Admin::PcategoriesController < ApplicationController
   end
 
   def destroy
-    @pcategory = Pcategory.find(params[:id])
+    @pcategory = Pcategory.friendly.find(params[:id])
     @pcategory.destroy
     redirect_to admin_pcategories_path, warning:"Category deleted"
   end
@@ -52,5 +52,6 @@ class Admin::PcategoriesController < ApplicationController
   def pcategory_params
     params.require(:pcategory).permit(:program_id, :name, :id, :description)
   end
+
 
 end

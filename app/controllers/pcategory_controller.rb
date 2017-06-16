@@ -4,8 +4,8 @@ class PcategoryController < ApplicationController
   end
 
   def show
-      @pcategory = Pcategory.find(params[:id])
+      @pcategory = Pcategory.friendly.find(params[:id])
   end
 
-  
+
 end
