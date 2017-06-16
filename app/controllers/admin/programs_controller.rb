@@ -10,10 +10,12 @@ before_action :admin_required
 
   def new
     @program = Program.new
+    @pcategories = Pcategory.all.map { |p| [p.name, p.id]}
   end
 
   def create
     @program = Program.new(program_params)
+    @program.pcategory_id = params [:pcategory_id]
     if @program.save
       redirect_to admin_programs_path
     else
@@ -27,22 +29,30 @@ before_action :admin_required
 
   def edit
     @program = Program.find(params[:id])
+      @pcategories = Pcategory.all.map { |p| [p.name, p.id]}
   end
 
   def update
     @program = Program.find(params[:id])
+      @program.pcategory_id = params[:pcategory_id]
     if @program.update(program_params)
-      redirect_to admin_program_path(@program)
+      redirect_to admin_program_path
     else
       render :edit
     end
+  end
+
+  def destroy
+    @program = Program.find(params[:id])
+    @program.destroy
+    redirect_to admin_programs_path, alert:'Program deleted'
   end
 
 
 private
 
 def program_params
-  params.require(:program).permit(:title, :category, :description, :space, :price, :image)
+  params.require(:program).permit(:title, :description, :space, :price, :image, :pcategory_name, :pcategory_id)
 end
 
 end

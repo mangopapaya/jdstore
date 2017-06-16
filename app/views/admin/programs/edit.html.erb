@@ -7,8 +7,7 @@
   </div>
 
   <div class="group">
-    <%= "Category" %>
-    <%= f.select :category, :Category => ["STEM Discovery", "Aesthetic Revolution", "Intelligence Exploration", "Academic Support"] %>
+    <%= select_tag(:pcategory_id, options_for_select(@pcategories, f.object.pcategory_id), :prompt => "Category") %>
   </div>
   <br>
 
@@ -32,6 +31,6 @@
   <div class="group">
     <%= f.input :image, as: :file %>
   </div>
-  
+
   <%= f.button :submit, "Update", data: { disable_with: "Submitting..." } %>
 <% end %>

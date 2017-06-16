@@ -14,6 +14,7 @@ Rails.application.routes.draw do
           post :refund
         end
     end
+    resources :pcategories, path: :catgories
   end
 
   namespace :account do
@@ -24,8 +25,9 @@ Rails.application.routes.draw do
     member do
       post :reserve_program
     end
-
   end
+
+  resources :pcategory
 
   resources :reservations do
     collection do

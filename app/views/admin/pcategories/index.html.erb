@@ -1,0 +1,29 @@
+<h2> Category List </h2>
+
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("Add New Category", new_admin_pcategory_path, class: "btn btn-primary btn-sm") %>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th width='100px'>Name</th>
+      <th width='200px'>Description</th>
+      <th width='100px'>Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pcategories.each do |pcategory| %>
+    <tr>
+      <td><%= link_to(pcategory.name, admin_pcategory_path(pcategory))  %></td>
+      <td><%= pcategory.description %></td>
+      <td>
+        <%= link_to 'Edit',edit_admin_pcategory_path(pcategory)%> |
+        <%= link_to 'Delete',admin_pcategory_path(pcategory), method: :delete, data: {confirm: 'Are you sure to remove this category?'}%>
+      </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>

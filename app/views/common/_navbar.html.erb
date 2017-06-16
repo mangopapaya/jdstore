@@ -7,7 +7,7 @@
           <span><%=image_tag "logo.png", :class => "d-inline-block" %></span>
           <span class="navbar-brand-reg">MY</span>
           <span class="navbar-brand-core">ALPHA</span>
-          <span class ="navbar-brand-reg"> BABY</span>
+          <span class ="navbar-brand-reg"> KIDS</span>
         </a>
       </div>
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,7 +52,8 @@
                   <%= link_to("Reservation History", account_orders_path ) %>
                 </li>
                 <li class="divider"> </li>
-                <li> <%= link_to(content_tag(:i, "Sign Out", class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>
+                <li>
+                  <%= link_to(content_tag(:i, "Sign Out", class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>
               </ul>
              </li>
             <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613063209) do
+ActiveRecord::Schema.define(version: 20170614060713) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "total",            default: 0
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 20170613063209) do
     t.string   "payment_method"
     t.string   "aasm_state",       default: "order_placed"
     t.index ["aasm_state"], name: "index_orders_on_aasm_state"
+  end
+
+  create_table "pcategories", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "program_lists", force: :cascade do |t|
@@ -44,9 +51,10 @@ ActiveRecord::Schema.define(version: 20170613063209) do
     t.text     "description"
     t.integer  "space"
     t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "image"
+    t.integer  "pcategory_id"
   end
 
   create_table "reservations", force: :cascade do |t|

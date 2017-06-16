@@ -1,4 +1,8 @@
 class Program < ApplicationRecord
   mount_uploader :image, ImageUploader
 
+  validates :title, presence: true
+  validates :space, numericality: {greater_than_or_equal_to: 0, message: "负学位还好意思上架嘛"}
+
+  belongs_to :pcategory
 end

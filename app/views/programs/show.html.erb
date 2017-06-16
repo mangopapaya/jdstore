@@ -8,7 +8,7 @@
   </div>
   <div class="col-md-6">
     <h2><%= @program.title %></h2>
-    <h4>Program Category: <%= @program.category %></h2>
+    <h4>Program Category: <%= @program.pcategory.name if @program.pcategory %></h2>
       <br>
     <div style="height:100px;">
       <p>

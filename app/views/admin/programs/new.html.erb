@@ -7,8 +7,7 @@
   </div>
 
   <div class="group">
-    <%= "Category" %>
-    <%= f.select :category, :Category => ["STEM Discovery", "Aesthetic Revolution", "Intelligence Exploration", "Academic Support"] %>
+    <%= f.select :pcategory_id, @pcategories, :include_blank => "Categories" %>
   </div>
   <br>
 
@@ -27,6 +26,6 @@
   <div class="group">
     <%= f.input :image, as: :file %>
   </div>
-  
+
   <%= f.button :submit, "Submit", data: { disable_with: "Submitting..." } %>
 <% end %>

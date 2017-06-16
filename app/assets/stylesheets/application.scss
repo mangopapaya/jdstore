@@ -517,7 +517,7 @@ li.navbar-link > li > a {
 		#teambio .bg-primary {
 			background-color: #fff;
 			color: black;
-			
+
 		}
 
 		.teambox h2 {
@@ -845,7 +845,8 @@ li.navbar-link > li > a {
 
 footer.container-fluid {
 	text-align: center;
-	background-color: #F57C00;
+	background-image: image-url("background-pattern.png");
+  background-repeat: repeat;
 	color: white;
 	padding: 60px 0 30px;
 }
@@ -884,4 +885,9 @@ footer a{
 footer a:hover {
 	font-weight: bold;
 	text-decoration: none;
+}
+
+////----------Program Index----------////
+.index-cat {
+  color: #F57c00;
 }
