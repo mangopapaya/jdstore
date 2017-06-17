@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PcategoryControllerTest < ActionDispatch::IntegrationTest
+class CategoryTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

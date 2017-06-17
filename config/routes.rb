@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
           post :refund
         end
     end
-    resources :pcategories, path: :catgories
+    resources :categories
   end
 
   namespace :account do
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :pcategory
+  resources :categories
 
   resources :reservations do
     collection do

@@ -1,6 +1,11 @@
 class ProgramsController < ApplicationController
   def index
-    @programs = Program.all
+    if params[:category].blank?
+      @programs = Program.all
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @programs = Program.where(:category_id => @category_id)
+    end
   end
 
   def show

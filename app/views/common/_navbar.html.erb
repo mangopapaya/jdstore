@@ -18,10 +18,31 @@
               <ul class="dropdown-menu">
                 <li class="dropdown-header">Alpha Programs</li>
                 <li><%= link_to("All Programs", programs_path) %></li>
-                <li><a href="#"> STEM Discovery </a></li>
-                <li><a href="#"> Aesthetic Revolution </a> </li>
-                <li><a href="#"> Intelligence Exploration </a></li>
-                <li><a href="#"> Academic Support </a></li>
+                <% Category.all.each do |category| %>
+                  <li><%= link_to(category.name, programs_path(category: category.name)) %> </li>
+                <% end %>
+                <!-- <li><a href="#">
+                  <i class="fa fa-fw fa-flask"></i>
+                  <span>STEM Discovery </span></a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-fw fa-paint-brush"></i>
+                    <span>Aesthetic Revolution </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-fw fa-lightbulb-o"></i>
+                    <span>Intelligence Exploration</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class='fa fa-fw fa-graduation-cap'></i>
+                    <span>Academic Support</span>
+                  </a>
+                </li> -->
                 <li class="divider"></li>
                 <li class="dropdown-header"> Alpha News </li>
               </ul>
@@ -31,13 +52,13 @@
         <ul class="nav navbar-nav navbar-right">
           <li class="navbar-link">
             <%= link_to reservations_path do %>
-                Reservation <i class="fa fa-calendar-plus-o"></i>(<%= current_reservation.programs.count %>)
+                Reservation <i class="fa fw fa-calendar-plus-o"></i>(<%= current_reservation.programs.count %>)
             <% end %>
           </li>
 
           <% if !current_user %>
             <li><%= link_to("Sign Up", new_user_registration_path) %></li>
-            <li><%= link_to(content_tag(:i, "Sign In", class: 'fa fa-sign-in'), new_user_session_path) %></li>
+            <li><%= link_to(content_tag(:i, "Sign In", class: 'fa fw fa-sign-in'), new_user_session_path) %></li>
           <% else %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">

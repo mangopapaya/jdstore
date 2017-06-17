@@ -10,60 +10,16 @@
 
 <body>
 
-<!-- Carousel Slides -->
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-
-      <div class="item active">
-        <%= image_tag("slide_1", :style => "width:100%") %>
-        <div class="carousel-caption">
-          <h3>Los Angeles</h3>
-          <p>LA is always so much fun!</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <%= image_tag("slide_2", :style => "width:100%") %>
-        <div class="carousel-caption">
-          <h3>Chicago</h3>
-          <p>Thank you, Chicago!</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <%= image_tag("slide_3", :style => "width:100%") %>
-        <div class="carousel-caption">
-          <h3>New York</h3>
-          <p>We love the Big Apple!</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
+<!--- Head Media Section --->
+  <div id="head-section">
+		<div id="video-title">
+			<h1>Be an outstanding Alpha Kid</h1>
+			<%= link_to("Join Us Now!", new_user_registration_path, class: "btn btn-alpha btn-lg") %>
+		</div>
+		<video autoplay="" loop="" muted="" style="width: 100%;">
+			<source src="http://7xss15.com1.z0.glb.clouddn.com/landing_page_video.mp4" type="video/mp4">
+		</video>
   </div>
-</div>
-
-</body>
-</html>
-
-<!-- /.carousel -->
 
 <!-- Section About
 ================================================== -->

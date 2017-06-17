@@ -34,8 +34,8 @@
           <%= program.title %>
         </td>
         <td>
-          <% if program.pcategory %>
-            <%= link_to(program.pcategory.name, admin_pcategories_path(program)) %>
+          <% if program.category %>
+            <%= link_to(program.category.name, categories_path(@program_category)) %>
           <% end %>
         </td>
         <td>
