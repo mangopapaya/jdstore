@@ -13,7 +13,6 @@
       <th width="100">Name</th>
       <th width="200">Description</th>
       <th width="80">Programs Count</th>
-      <th width="150"></th>
     </tr>
   </thead>
 
@@ -23,9 +22,6 @@
         <td><b><%= link_to(category.name, category_path(@category_programs)) %></b></td>
         <td><%= category.description %></td>
         <td><%= category.programs.count %></td>
-        <td><%= link_to 'Show', category %> |
-            <%= link_to 'Edit', edit_category_path(category) %> |
-            <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

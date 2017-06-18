@@ -1,0 +1,20 @@
+<h4><b>Category: <%= @category.name %></h4>
+<div class="pull-right">
+  <%= link_to 'Edit', edit_admin_category_path(@category) %> |
+  <%= link_to 'Back', admin_categories_path %>
+</div>
+<body>Description:<%= @category.description %></body>
+
+<hr>
+<% for program in @category.programs do %>
+  <div class="col-xs-6 col-md-3">
+    <%= link_to program_path(program) do %>
+      <% if program.image.present? %>
+        <%= image_tag(program.image.thumb.url, class: "thumbnail") %>
+      <% else %>
+        <%= image_tag("http://placeholder.it/200x200&text=No Pic", class: "thumbnail") %>
+      <% end %>
+     <% end %>
+    <b><%= link_to(program.title, edit_admin_program_path(program)) %></b> <div class="index-cat" ></div>
+  </div>
+<% end %>

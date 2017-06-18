@@ -35,7 +35,7 @@
         </td>
         <td>
           <% if program.category %>
-            <%= link_to(program.category.name, categories_path(@program_category)) %>
+            <%= link_to(program.category.name, admin_category_path(program.category)) %>
           <% end %>
         </td>
         <td>

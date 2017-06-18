@@ -7,7 +7,7 @@
   </div>
 
   <div class="group">
-    <%= f.select :category_id, @categories, :include_blank => "Categories" %>
+  <%= select_tag(:category_id, options_for_select(@categories, f.object.category_id), :prompt => "Category") %>
   </div>
   <br>
 
