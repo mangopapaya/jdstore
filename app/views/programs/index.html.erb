@@ -1,4 +1,80 @@
-<div class="row">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Section Intro Carousel
+================================================== -->
+<!-- Carousel Slides -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div class="row">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+
+        <div class="item active">
+          <%= image_tag("slide_1", :style => "width:100%") %>
+          <div class="carousel-caption">
+            <h3>STEM体验: 从小培养科学逻辑，小小科学家，让你的孩子给你惊喜!</h3>
+            <p>STEM Discovery: Let your baby surprise you!</p>
+            <a class="btn btn-alpha" href="/programs?category=STEM+Discovery">STEM Discovery</a>
+          </div>
+        </div>
+
+        <div class="item">
+          <%= image_tag("slide_2", :style => "width:100%") %>
+          <div class="carousel-caption">
+            <h3>审美·艺术：让孩子从小学会发现美，理解美，创造美！</h3>
+            <p>Aesthetic Revolution: Get inside the nature of art, beauty and taste.</p>
+            <a class="btn btn-alpha" href="/programs?category=Aesthetic+Revolution">Aesthetic Revolution</a>
+          </div>
+        </div>
+
+        <div class="item">
+          <%= image_tag("slide_3", :style => "width:100%") %>
+          <div class="carousel-caption">
+            <h3>多元智能：智能开发，从小开启！</h3>
+            <p>Intelligence Exploration: Let's get smarter earlier!</p>
+            <a class="btn btn-alpha" href="/programs?category=Intelligence+Exploration">Intelligence Exploration</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+
+  </div>
+</div>
+<!-- /.carousel -->
+
+  <!-- Section Program Portfolio
+  ================================================== -->
+
+<div class="container">
+  <% if params[:category].blank? %>
+    <h2 class="brief-intro">Alpha课程一览 </h2>
+    <p>我们的课程分成了四大类别：“STEM体验”，“审美·艺术”，“智能拓展” 和 “满分学堂”。赶紧来体验一下吧！</p>
+  <% else %>
+    <h3 class="brief-category">Category:&nbsp;<%= @category_id = Category.find_by(name: params[:category]).name %></h3>
+  <% end %>
+  <hr>
   <% @programs.each do |program| %>
     <div class="col-xs-6 col-md-3">
       <%= link_to program_path(program) do %>

@@ -23,5 +23,9 @@ class ProgramsController < ApplicationController
     redirect_to :back
   end
 
+  def programs_category
+    category = Category.find(params[:id])
+    category.programs
+  end
 
 end
