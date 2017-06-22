@@ -50,14 +50,14 @@ before_action :admin_required
   def destroy
     @program = Program.friendly.find(params[:id])
     @program.destroy
-    redirect_to admin_programs_path, alert:'Program deleted'
+    redirect_to admin_programs_path
   end
 
 
 private
 
 def program_params
-  params.require(:program).permit(:title, :description, :space, :price, :image, :category_id, :pcategory_name, :pcategory_id)
+  params.require(:program).permit(:title, :description, :space, :price, :image, :category_id, :age_range)
 end
 
 end

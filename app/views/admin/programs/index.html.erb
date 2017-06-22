@@ -46,7 +46,7 @@
         </td>
         <td>
           <%= link_to("Edit", edit_admin_program_path(program)) %> |
-          <%= link_to("Delete", program_path(program), method: :delete, data: {confirm: "Are you sure to delete this program?"}) %>
+          <%= link_to("Delete", admin_program_path(program), method: :delete, data: {confirm: "Are you sure to delete this program?"}) %>
         </td>
       </tr>
     <% end %>

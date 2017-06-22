@@ -121,6 +121,14 @@ ul.dropdown-menu > li > a:hover{
 	color: white;
 }
 
+li.category_list a:before {
+  content: "\f0eb";
+  font-family: FontAwesome;
+  display:inline;
+  position: relative;
+  padding-right: 5px;
+}
+
   /**---Rightside Menu --**/
 #bs-example-navbar-collapse-1 .navbar-right > li > a {
 	color: #FFFFFF;

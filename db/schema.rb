@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170617062402) do
+ActiveRecord::Schema.define(version: 20170619021543) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20170617062402) do
     t.integer  "pcategory_id"
     t.string   "slug"
     t.string   "category_id"
+    t.string   "age_range"
   end
 
   create_table "reservations", force: :cascade do |t|

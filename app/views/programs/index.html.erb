@@ -8,7 +8,7 @@
 <!-- Section Intro Carousel
 ================================================== -->
 <!-- Carousel Slides -->
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:450px">
   <div class="row">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -24,7 +24,7 @@
           <%= image_tag("slide_1", :style => "width:100%") %>
           <div class="carousel-caption">
             <h3>STEM体验: 从小培养科学逻辑，小小科学家，让你的孩子给你惊喜!</h3>
-            <p>STEM Discovery: Let your baby surprise you!</p>
+            <p>STEM Discovery: Let your baby surprise you!</p><br>
             <a class="btn btn-alpha" href="/programs?category=STEM+Discovery">STEM Discovery</a>
           </div>
         </div>
@@ -33,7 +33,7 @@
           <%= image_tag("slide_2", :style => "width:100%") %>
           <div class="carousel-caption">
             <h3>审美·艺术：让孩子从小学会发现美，理解美，创造美！</h3>
-            <p>Aesthetic Revolution: Get inside the nature of art, beauty and taste.</p>
+            <p>Aesthetic Revolution: Get inside the nature of art, beauty and taste.</p><br>
             <a class="btn btn-alpha" href="/programs?category=Aesthetic+Revolution">Aesthetic Revolution</a>
           </div>
         </div>
@@ -42,7 +42,7 @@
           <%= image_tag("slide_3", :style => "width:100%") %>
           <div class="carousel-caption">
             <h3>多元智能：智能开发，从小开启！</h3>
-            <p>Intelligence Exploration: Let's get smarter earlier!</p>
+            <p>Intelligence Exploration: Let's get smarter earlier!</p><br>
             <a class="btn btn-alpha" href="/programs?category=Intelligence+Exploration">Intelligence Exploration</a>
           </div>
 
@@ -73,18 +73,20 @@
     <p>我们的课程分成了四大类别：“STEM体验”，“审美·艺术”，“智能拓展” 和 “满分学堂”。赶紧来体验一下吧！</p>
   <% else %>
     <h3 class="brief-category">Category:&nbsp;<%= @category_id = Category.find_by(name: params[:category]).name %></h3>
+    <body><%= @category_id = Category.find_by(name: params[:category]).description %></body>
   <% end %>
   <hr>
   <% @programs.each do |program| %>
     <div class="col-xs-6 col-md-3">
       <%= link_to program_path(program) do %>
         <% if program.image.present? %>
-          <%= image_tag(program.image.thumb.url, class: "thumbnail") %>
+          <%= image_tag(program.image.small.url, class: "thumbnail") %>
         <% else %>
-          <%= image_tag("http://placeholder.it/200x200&text=No Pic", class: "thumbnail") %>
+          <%= image_tag("http://placeholder.it/200x133&text=No Pic", class: "thumbnail") %>
         <% end %>
        <% end %>
-      <b><%= program.title %></b> <div class="index-cat" ><%= program.category.name if program.category %></div>
+      <b><%= program.title %></b>
+      <div class="index-cat" >Age: <%= program.age_range if program.age_range %></div>
     </div>
   <% end %>
 </div>

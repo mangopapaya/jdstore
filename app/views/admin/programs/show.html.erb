@@ -8,15 +8,20 @@
   </div>
   <div class="col-md-6">
     <h2><%= @program.title %></h2>
-    <h4>Program Category: <%= @program.category %></h2>
+    <h4>Program Category: <%= @program.category.name %></h2>
       <br>
     <div style="height:100px;">
       <p>
         <%= @program.description %>
       </p>
+      <p>
+        Age range: <%= @program.age_range %>
+      </p>
     </div>
     <div> Slot: <%= @program.space %></div>
-    <div class="program-price"> $ <%= @program.price %></div>
+    <div class="program-price"> ￥ <%= @program.price %></div>
+    <br>
+        <%= link_to("Back", admin_programs_path) %>
     <div class="pull-right">
       <%= link_to("Edit Program", edit_admin_program_path(@program), :class => "btn btn-danger btn-lg") %>
     </div>
