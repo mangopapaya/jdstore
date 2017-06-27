@@ -72,7 +72,7 @@
     <h2 class="brief-intro">Alpha课程一览 </h2>
     <p>我们的课程分成了四大类别：“STEM体验”，“审美·艺术”，“智能拓展” 和 “满分学堂”。赶紧来体验一下吧！</p>
   <% else %>
-    <h3 class="brief-category">Category:&nbsp;<%= @category_id = Category.find_by(name: params[:category]).name %></h3>
+    <h3 class="brief-category"><%= @category_id = Category.find_by(name: params[:category]).name %></h3>
     <body><%= @category_id = Category.find_by(name: params[:category]).description %></body>
   <% end %>
   <hr>
