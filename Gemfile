@@ -37,6 +37,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'aasm'
 gem 'friendly_id', '~> 5.1.0'
+gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 gem 'figaro'
 
